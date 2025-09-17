@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: flask-container
-          image: chaitali369/flask-ci-cd:latest
+          image: chaitali369/flask-ci-cd-github:latest
           ports:
             - containerPort: 5000
