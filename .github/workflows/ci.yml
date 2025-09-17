@@ -13,7 +13,7 @@ jobs:
     steps:
       # 1. Checkout the repo
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
       # 2. Set up Docker Buildx
       - name: Set up Docker Buildx
@@ -33,7 +33,7 @@ jobs:
           context: .
           push: true
           tags: |
-            chaitali369/flask-ci-cd:latest
-            chaitali369/flask-ci-cd:${{ github.sha }}
-          cache-from: type=registry,ref=chaitali369/flask-ci-cd:latest
-          cache-to: type=registry,ref=chaitali369/flask-ci-cd:latest,mode=max
+            ${{ secrets.DOCKERHUB_USERNAME }}/flask-ci-cd:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/flask-ci-cd:${{ github.sha }}
+          cache-from: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/flask-ci-cd:latest
+          cache-to: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/flask-ci-cd:latest,mode=max
