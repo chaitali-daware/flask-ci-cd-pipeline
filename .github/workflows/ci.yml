@@ -33,7 +33,7 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/flask-ci-cd:latest
-            ${{ secrets.DOCKERHUB_USERNAME }}/flask-ci-cd:${{ github.sha }}
-          cache-from: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/flask-ci-cd:latest
-          cache-to: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/flask-ci-cd:latest,mode=max
+            ${{ secrets.DOCKERHUB_USERNAME }}/flask-ci-cd-github:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/flask-ci-cd-github:${{ github.sha }}
+          cache-from: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/flask-ci-cd-github:latest
+          cache-to: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/flask-ci-cd-github:latest,mode=max
